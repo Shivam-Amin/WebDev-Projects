@@ -1,0 +1,44 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.card {
+    width: 400px;
+}
+
+.card__content {
+    background-color: pink;
+    text-align: center;
+    position: relative;
+    padding: 5em;
+
+    transition: transform 3s;
+    transform-style: preserve-3d;
+}
+
+/* The reason to add card__content is because we don't want to rotate our card. */
+.card:hover .card__content {
+    transform: rotateY(.5turn);     /* It will rotate the element half of half at y axis when we hover to it. */
+}
+.card__front, .card__back {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2em; 
+}
+
+.card__body {
+    /* font-size: 3rem; */
+    transform: translateZ(200px);
+}
