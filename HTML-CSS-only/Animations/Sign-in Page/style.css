@@ -149,8 +149,8 @@ body {
     bottom: 0;
     width: 0;
     height: 2px;
-    background: #65f2fc;
-    /* border-radius: 50%; */
+    background: #5da9d9;
+    border-radius: 50ch;
     outline: none;
     transition: 0.5s;
     pointer-events: none;
@@ -174,10 +174,29 @@ body {
     text-decoration: none;
 }
 
-.form__links a:hover,
 .form__links a:nth-child(2) {
     color: var(--COLOR);
 }
+
+.form__links i {
+    position: absolute; 
+    width: 0;
+    height: 1px;
+    bottom: 144px;
+    background-color: #5da9d9;
+    transition: 0.1s;
+}
+
+.form__links a:first-child:hover {
+    color: var(--COLOR);
+    font-style: italic;
+}
+
+.form__links a:first-child:hover ~ i {
+    width: 30%;
+    border-radius: 50ch;
+}
+
 
 input[type="submit"] {
     border: none;

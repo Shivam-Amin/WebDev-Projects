@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --BG-COLOR: #333;
+    --COLOR: whitesmoke;
+    --CLR-NUTRAL: rgb(55, 158, 222); 
+    --CLR-FONT: rgb(234, 165, 74);
+
+    --SIZE-100: 60px;
+    --SIZE-200: 100px;
+    --SIZE-300: 1.3rem;
+    --SIZE-900: 3.5rem;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--BG-COLOR);
+
+    display: grid;
+    place-content: center;
+}
+
+.container {
+    display: grid;
+    grid-template: 
+        'time' 'time' 'time'
+        'start' 'pause' 'reset';
+    gap: 3rem;
+}
+
+.timer {
+    font-size: var(--SIZE-900);
+    color: var(--CLR-FONT);
+    grid-area: time;
+    margin: auto;
+}
+
+.btns {
+    display: flex;
+    gap: 1rem;
+}
+
+.start {
+    grid-area: start;
+}
+
+.pause {
+    grid-area: pause;
+}
+
+.reset {
+    grid-area: reset;
+}
+
+button {
+    width: var(--SIZE-200);
+    height: var(--SIZE-100);
+    font-size: var(--SIZE-300);
+    background: var(--CLR-NUTRAL);
+    opacity: 0.6;
+    border: none;
+    border-radius: 50vw;
+    box-shadow: inset 2px 2px 4px var(--BG-COLOR);
+}
+
+button:is(:hover, :focus) {
+    /* border: 0.5px solid; */
+    transition: 0.2s;
+    border-color: var(--CLR-NUTRAL);
+    background: transparent;
+    opacity: 1;
+    box-shadow: inset 0 0 510px var(--CLR-NUTRAL), 0 0 10px var(--CLR-NUTRAL);
+}
